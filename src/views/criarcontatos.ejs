@@ -1,0 +1,56 @@
+<%-  include('includes/head')%>
+<%- include('includes/nav')%>
+
+  <form  class="form-criarctt" action="/conta/contatos/register" method="post">
+
+    <div class="container my-5">
+    
+      <input type="hidden" name="_csrf" value="<%- csrfToken %>">
+    
+      <h1 class="text-center">Crie seus contatos!</h1>
+    
+      <%- include('includes/messages') %>
+  
+  <div class="card-body">
+    <div class="mb-3">
+      <label for="nome" class="form-label">Nome</label>
+      <input type="text" class="form-control" name="nome">
+    </div>
+  </div>
+  
+  <div class="card-body">
+    <div class="mb-3">
+      <label class="form-label" for="Sobrenome">Sobrenome</label>
+      <input type="text" class="form-control" name="sobrenome">
+    </div>
+  </div>
+  
+  <div class="card-body">
+  
+    <div class="mb-3">
+      <label for="Email" class="form-label">Email</label>
+      <input type="email" class="form-control" name="email" aria-describedby="emailHelp">
+  
+    </div>
+  
+  </div>
+  
+  <div class="card-body">
+    <div class="mb-3">
+      <label for="telefone" class="form-label">Numero de telefone</label>
+      <input type="text" class="form-control" name="telefone">
+    </div>
+  </div>
+  
+  
+
+  <div class="card-body">
+    <button type="submit" class="btn btn-primary">Submit</button>  
+  </div>
+  
+</div>
+ 
+</form>
+
+
+<%- include('includes/footer')%>  

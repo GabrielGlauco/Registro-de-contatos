@@ -1,0 +1,55 @@
+<%-  include('includes/head')%>
+<%- include('includes/nav')%>
+
+
+<form class="form-editarctt" action="/conta/contatos/editado" method="post">
+ 
+
+      <div class="container my-5">
+      
+        <input type="hidden" name="_csrf" value="<%- csrfToken %>">
+      
+        <h1 class="text-center">Edite seus contatos!</h1>
+      
+        <%- include('includes/messages') %>
+        
+          
+          <input type="hidden" name="id" value="<%= contato._id.toString() %>">
+          <div class="card-body">
+            <div class="mb-3">
+              <label for="nome" class="form-label">Nome</label>
+              <input type="text" class="form-control" name="nome"  value="<%= contato.nome %>">
+            </div>
+          </div>
+          
+          <div class="card-body">
+            <div class="mb-3">
+              <label class="form-label" for="Sobrenome">Sobrenome</label>
+              <input type="text" class="form-control" name="sobrenome" value="<%= contato.sobrenome %>">
+            </div>
+          </div>
+          
+          <div class="card-body">
+          
+            <div class="mb-3">
+              <label for="Email" class="form-label">Email</label>
+              <input type="email" class="form-control" name="email" aria-describedby="emailHelp" value="<%= contato.email %>">
+          
+            </div>
+          
+          </div>
+          
+          <div class="card-body">
+            <div class="mb-3">
+              <label for="telefone" class="form-label">Numero de telefone</label>
+              <input type="text" class="form-control" name="telefone" value="<%= contato.telefone %>">
+            </div>
+          </div>
+
+    
+    <button type="submit" class="btn btn-primary my-3">Submit</button>
+</form>
+  
+
+
+<%- include('includes/footer')%>  

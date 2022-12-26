@@ -1,0 +1,39 @@
+<%- include('./includes/head') %>
+<%- include('./includes/nav') %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-2"></div>
+
+        <div class="col-lg-8 my-3">
+            <h1 class="text-center">Agenda</h1>
+            <% if(Listacontatos <= 0) { %>
+                <h3 class="text-center my-4" >Você não tem contatos :(</h3> 
+            <% } else { %>
+            <p class="text-center lead">Seus contatos estão abaixo!</p>
+            <% } %>
+
+            <div class="reponsive-table my-3">
+                <table class="table">
+                <% for (const c of Listacontatos) { %>
+                
+                    <tr>
+                        <td><%= c.nome %>  <%= c.sobrenome %></td>
+                        <td><%= c.email %></td>
+                        <td>9<%= c.telefone %></td>
+                        <td><a class="btn btn-primary" href="/conta/contatos/editar/<%=c.id%>" role="button">Editar</a></td>
+                        <td><a class="btn btn-danger" href="/conta/contatos/deletar/<%=c.id%>" role="button">Excluir</a></td>
+                    </tr>
+                <% } %>
+                </table>
+            
+            </div>
+    
+        </div>
+
+       
+        <div class="col-lg-2"></div>
+    </div>
+</div>
+
+<%- include('./includes/footer') %>
