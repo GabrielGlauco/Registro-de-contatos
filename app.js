@@ -1,5 +1,4 @@
 require('dotenv').config()
-console.log(process.env)
 const express = require('express');
 const app = express();
 const router = require('./router.js');
@@ -16,7 +15,7 @@ mongoose.connect(process.env.CONNECTSTRING, {
 }).catch(e => console.log(e)) 
 
 const session = require('express-session'); // configurar sessões
-const MongoStore = require('connect-mongo'); // enviar dados coletados pela sessão para o mongo
+const MongoStore = require('connect-mongo').default; // enviar dados coletados pela sessão para o mongo
 const flash = require('connect-flash');
 const csrf = require('csurf') // proteger contra ataques de falsificação de envio de formulario
 const helmet = require('helmet') // midleware que desenpenha varios papeis na seguraça da aplicação
