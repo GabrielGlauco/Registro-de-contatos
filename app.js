@@ -5,7 +5,7 @@ const app = express();
 const router = require('./router.js');
 const path = require('path');
 const mongoose = require('mongoose');
-//const connectString = 'mongodb+srv://gabrielglauco:dodozika5@registrodecontatos.lkkxrro.mongodb.net/?retryWrites=true&w=majority'
+
 mongoose.connect(process.env.CONNECTSTRING, { 
     useNewUrlParser: true,
     useUnifiedTopology: true,
